@@ -1,0 +1,23 @@
+
+#mainDiv{
+  width: 100%;
+}
+#weatherData{
+  width: 75%;
+}
+#weatherImage{
+  background-image: url("");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /*img urls
+  http://www.hdwallpapers.in/walls/spring_sunny_landscape-wide.jpg
+  */
+}
+.data{
+
+  font-size: 15px;
+}
+#toggle{
+  background-color: red;
+  width: 100%;
+}
