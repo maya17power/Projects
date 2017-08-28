@@ -1,0 +1,12 @@
+#list{
+  padding-top: 5%;
+}
+.logo{
+  margin-right: 20px;
+  height: 50px;
+  width: 50px;
+}
+.list{
+  height: auto;
+  width: 100%;
+}
