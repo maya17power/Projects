@@ -24,14 +24,33 @@ Run tests (ctrl + enter)
 */
 
 
+// function translatePigLatin(str) {
+//    var word = str.substr(0,1);
+//    var vowel = ["a","e","i","o","u"];
+//    if(word == vowel.filter(function(val){return val == word;})){
+//      return str + "way";
+//    }
+//      return "no way";
+// }
+
+
 function translatePigLatin(str) {
-   var word = str.substr(0,1);
+   var word = str.split('');
    var vowel = ["a","e","i","o","u"];
-   if(word == vowel.filter(function(val){return val == word;})){
-     return str + "way";
+   var count= 0;
+   var nonVowel = [];
+  // word.filter(function(val){
+  //   if(val == vowel){
+
+  //   }
+  // });
+   for(var i = 0; i < word.length; i++){
+     vowel.indexOf(word[i]) != -1?
+     "found" : nonVowel.push(word[i]);
    }
-     return "no way";
+   console.log(nonVowel.slice(0,2));
 }
+
 
 //translatePigLatin("consonant");
 
