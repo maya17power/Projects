@@ -39,6 +39,7 @@ function translatePigLatin(str) {
    var vowel = ["a","e","i","o","u"];
    var count= 0;
    var nonVowel = [];
+   var moveNonVowel = [];
   // word.filter(function(val){
   //   if(val == vowel){
 
@@ -52,9 +53,10 @@ function translatePigLatin(str) {
    //console.log(nonVowel[2] == word[2]);
    for(var j = 0; j < nonVowel.length; j++){
      if(nonVowel[j] == word[j]){
-       console.log(nonVowel[j]);
+       moveNonVowel.push(nonVowel[j]);
      }
    }
+      console.log(str.substr(moveNonVowel.length) + moveNonVowel.join('') + "ay");
 }
 
 
