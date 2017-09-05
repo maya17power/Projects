@@ -40,17 +40,12 @@ function translatePigLatin(str) {
    var count= 0;
    var nonVowel = [];
    var moveNonVowel = [];
-  // word.filter(function(val){
-  //   if(val == vowel){
 
-  //   }
-  // });
    for(var i = 0; i < word.length; i++){
      vowel.indexOf(word[i]) != -1?
      "found" : nonVowel.push(word[i]);
    }
-   //console.log(nonVowel.slice(0,2));
-   //console.log(nonVowel[2] == word[2]);
+
    for(var j = 0; j < nonVowel.length; j++){
      if(nonVowel[j] == word[j]){
        moveNonVowel.push(nonVowel[j]);
