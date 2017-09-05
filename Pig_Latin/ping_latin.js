@@ -48,7 +48,13 @@ function translatePigLatin(str) {
      vowel.indexOf(word[i]) != -1?
      "found" : nonVowel.push(word[i]);
    }
-   console.log(nonVowel.slice(0,2));
+   //console.log(nonVowel.slice(0,2));
+   //console.log(nonVowel[2] == word[2]);
+   for(var j = 0; j < nonVowel.length; j++){
+     if(nonVowel[j] == word[j]){
+       console.log(nonVowel[j]);
+     }
+   }
 }
 
 
