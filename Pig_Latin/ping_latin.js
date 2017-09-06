@@ -22,33 +22,21 @@ Run tests (ctrl + enter)
 
 
 */
-
-
-// function translatePigLatin(str) {
-//    var word = str.substr(0,1);
-//    var vowel = ["a","e","i","o","u"];
-//    if(word == vowel.filter(function(val){return val == word;})){
-//      return str + "way";
-//    }
-//      return "no way";
-// }
-
-
-
 function translatePigLatin(str) {
    var word = str.split('');
    var vowel = ["a","e","i","o","u"];
    var nonVowel = [];
    var moveNonVowel = [];
-   console.log(vowel.indexOf(word[0])); // is there any vowels in word first letter
-   console.log();
-   if(vowel.indexOf(word[0]) != -1){// if != -1||true, attach a "way" to the end of the word.
+
+   if(vowel.indexOf(word[0]) != -1){
      return str + "way";
    }
 
    for(var i = 0; i <= 3; i++){
-       vowel.indexOf(word[i]) === -1?
-       nonVowel.push(word[i]) : "found";
+     if(vowel.indexOf(word[i]) === -1){
+       nonVowel.push(word[i]);
+     }
+       console.log("found");
    }
 
    for(var j = 0; j < nonVowel.length; j++){
@@ -59,23 +47,6 @@ function translatePigLatin(str) {
 
    return str.substr(moveNonVowel.length) + moveNonVowel.join('') + "ay";
 
-  // for(var i = 0; i < word.length; i++){
-  //   if(word[i] == ){
-
-  //   }
-  // }
-
-  // for(var i = 0; i < word.length; i++){
-  //   vowel.indexOf(word[i]) != -1?
-  //   "found" : nonVowel.push(word[i]);
-  // }
-
-  // for(var j = 0; j < nonVowel.length; j++){
-  //   if(nonVowel[j] == word[j]){
-  //     moveNonVowel.push(nonVowel[j]);
-  //   }
-  // }
-  //     console.log(str.substr(moveNonVowel.length) + moveNonVowel.join('') + "ay");
 }
 
 //translatePigLatin("consonant");
