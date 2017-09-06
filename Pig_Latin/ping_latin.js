@@ -38,17 +38,26 @@ Run tests (ctrl + enter)
 function translatePigLatin(str) {
    var word = str.split('');
    var vowel = ["a","e","i","o","u"];
-   var count= 0;
    var nonVowel = [];
    var moveNonVowel = [];
    console.log(vowel.indexOf(word[0])); // is there any vowels in word first letter
-   console.log();// if != -1||true, attach a "way" to the end of the word.
-   if(vowel.indexOf(word[0]) != -1){
-     return console.log("found vowel on word's first character");
+   console.log();
+   if(vowel.indexOf(word[0]) != -1){// if != -1||true, attach a "way" to the end of the word.
+     return str + "way";
    }
-     return console.log("go to next if statement");
 
+   for(var i = 0; i <= 3; i++){
+       vowel.indexOf(word[i]) === -1?
+       nonVowel.push(word[i]) : "found";
+   }
 
+   for(var j = 0; j < nonVowel.length; j++){
+       if(nonVowel[j] == word[j]){
+          moveNonVowel.push(nonVowel[j]);
+       }
+   }
+
+   return str.substr(moveNonVowel.length) + moveNonVowel.join('') + "ay";
 
   // for(var i = 0; i < word.length; i++){
   //   if(word[i] == ){
