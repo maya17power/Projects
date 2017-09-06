@@ -41,9 +41,12 @@ function translatePigLatin(str) {
    var count= 0;
    var nonVowel = [];
    var moveNonVowel = [];
-   console.log(vowel.indexOf(word[0])); // is ther any vowels in word first letter
-   console.log();// if -1, them move first letter to end of word and attach an "ay" to the end of the word.
-
+   console.log(vowel.indexOf(word[0])); // is there any vowels in word first letter
+   console.log();// if != -1||true, attach a "way" to the end of the word.
+   if(vowel.indexOf(word[0]) != -1){
+     return console.log("found vowel on word's first character");
+   }
+     return console.log("go to next if statement");
 
 
 
