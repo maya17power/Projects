@@ -23,7 +23,14 @@ String.prototype.split()
 
 
 function pairElement(str) {
-  return str;
+  var e = str.split('');
+  var base = [['A','T'],['C','G'],['T','A'],['G','C']];
+  var match = [];
+  //console.log(base[0][0]);// display per letter
+  if(e[0] == base[3][0]){
+    return "match found " + base[0][0];
+  }
+    return "no match found";
 }
 
 pairElement("GCG");
