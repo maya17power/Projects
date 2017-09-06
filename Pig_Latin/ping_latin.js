@@ -34,26 +34,37 @@ Run tests (ctrl + enter)
 // }
 
 
+
 function translatePigLatin(str) {
    var word = str.split('');
    var vowel = ["a","e","i","o","u"];
    var count= 0;
    var nonVowel = [];
    var moveNonVowel = [];
+   console.log(vowel.indexOf(word[0])); // is ther any vowels in word first letter
+   console.log();// if -1, them move first letter to end of word and attach an "ay" to the end of the word.
 
-   for(var i = 0; i < word.length; i++){
-     vowel.indexOf(word[i]) != -1?
-     "found" : nonVowel.push(word[i]);
-   }
 
-   for(var j = 0; j < nonVowel.length; j++){
-     if(nonVowel[j] == word[j]){
-       moveNonVowel.push(nonVowel[j]);
-     }
-   }
-      console.log(str.substr(moveNonVowel.length) + moveNonVowel.join('') + "ay");
+
+
+  // for(var i = 0; i < word.length; i++){
+  //   if(word[i] == ){
+
+  //   }
+  // }
+
+  // for(var i = 0; i < word.length; i++){
+  //   vowel.indexOf(word[i]) != -1?
+  //   "found" : nonVowel.push(word[i]);
+  // }
+
+  // for(var j = 0; j < nonVowel.length; j++){
+  //   if(nonVowel[j] == word[j]){
+  //     moveNonVowel.push(nonVowel[j]);
+  //   }
+  // }
+  //     console.log(str.substr(moveNonVowel.length) + moveNonVowel.join('') + "ay");
 }
-
 
 //translatePigLatin("consonant");
 
