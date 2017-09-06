@@ -23,12 +23,17 @@ String.prototype.split()
 
 
 function pairElement(str) {
+  var count = 0;
   var e = str.split('');
   var base = [['A','T'],['C','G'],['T','A'],['G','C']];
   var match = [];
+  //console.log("Current count: "+ count );
   //console.log(base[0][0]);// display per letter
-  if(e[0] == base[3][0]){
-    return "match found " + base[0][0];
+  if(e[count] == base[3][0]){
+    match.push(base[3][0]);
+    count ++;
+    console.log("Current count: "+ count );
+    return "match found " + base[3][0];
   }
     return "no match found";
 }
