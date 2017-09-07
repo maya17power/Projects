@@ -8,10 +8,10 @@ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write you
 
 Here are some helpful links:
 
-*/
 
 String.prototype.charCodeAt()
 String.fromCharCode()
+*/
 
 function fearNotLetter(str) {
   return str;
