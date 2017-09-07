@@ -28,17 +28,20 @@ function pairElement(str) {
   var base = [['A','T'],['C','G'],['T','A'],['G','C']];
   var match = [];
   //console.log("Current count: "+ count );
-  //console.log(base[0][0]);// display per letter
-  if(e[count] == base[3][0]){
-    match.push(base[3][0]);
-    count ++;
-    console.log("Current count: "+ count );
-    return "match found " + base[3][0];
-  }
-    return "no match found";
+  //console.log(base[0]);// display per letter
+  for(var i = 0; i < e.length; i++){
+    for(var j = 0; j < base.length; j++){
+        if(e[i] === base[j][0]){
+          match.push(base[j]);
+          console.log("Current count: "+ match.length );
+        }
+          console.log("no match found");
+    }//end for loop slave
+  }//end for loop master
+  console.log(match);
 }
 
-pairElement("GCG");
+//pairElement("GCG");
 
 
 
