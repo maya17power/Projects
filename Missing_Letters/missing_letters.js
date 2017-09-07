@@ -8,9 +8,10 @@ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write you
 
 Here are some helpful links:
 
+String.prototype.charCodeAt() //'ABC'.charCodeAt(0); // returns 65
+String.fromCharCode() //String.fromCharCode(65, 66, 67);  // returns "ABC"
 
-String.prototype.charCodeAt()
-String.fromCharCode()
+
 */
 
 function fearNotLetter(str) {
