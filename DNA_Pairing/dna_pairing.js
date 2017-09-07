@@ -39,6 +39,7 @@ function pairElement(str) {
     }//end for loop slave
   }//end for loop master
   console.log(match);
+  return match;
 }
 
 //pairElement("GCG");
