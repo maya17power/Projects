@@ -18,7 +18,11 @@ Array.prototype.reduce()
 
 
 function uniteUnique(arr) {
-  return arr;
+  //look thur all arrays and combine them to one array
+  var arrLength = arr.length;
+  console.log(arr);
+  console.log(arrLength);
+
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
