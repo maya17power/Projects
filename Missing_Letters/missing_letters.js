@@ -15,9 +15,22 @@ String.fromCharCode() //String.fromCharCode(65, 66, 67);  // returns "ABC"
 */
 
 function fearNotLetter(str) {
-  console.log(str.length);//display how many characters we are working with?
-  console.log(str.charCodeAt(0)); //display the first character on the string?
-  //if you add +1, it should be the character in synch with alphabet.
+  var charCount = [];
+  console.log("string length: " + str.length);//display how many characters we are working with?
+  console.log("charCodeAt: " + str.charCodeAt(0)); //display the first character on the string?
+  //charCount.push(str.charCodeAt(0) + 1);
+
+  for(var i = 0; i < str.length; i++){
+      charCount.push(str.charCodeAt(0) + i );
+  }
+
+  console.log("character synch: " charCount);
+
+  //add the init character of the string and add the length to return the correct sequence.
+
+
+
+
   // else find that character and return it.
   // otherwise if all characters found return undefined.
 
