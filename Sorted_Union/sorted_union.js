@@ -17,13 +17,19 @@ Array.prototype.reduce()
 */
 
 
-function uniteUnique(arr) {
-  //look thur all arrays and combine them to one array
-  var arrLength = arr.length;
-  console.log(arr);
-  console.log(arrLength);
+while(end === ""){
+   if(arguments[count] !== undefined){
+      myArr.push(arguments[count]);
+     count++;
+   }else{
+           end = undefined;
+        }
+ }
 
-}
+ console.log(end);
+ console.log(myArr.reduce(function(a,b){
+   return a.concat(b);
+ }));
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
