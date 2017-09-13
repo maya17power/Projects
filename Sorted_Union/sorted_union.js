@@ -17,32 +17,28 @@ Array.prototype.reduce()
 */
 
 
-function uniteUnique(arr) {
-  var myArr = [];
-  var count = 0;
-  var end = "";
-  while(end === ""){//look thur all arrays and combine them to one array
-    if(arguments[count] !== undefined){
-        myArr.push(arguments[count]);
-        count++;
-    }else{
-            end = undefined;
-         }
-  }  //during combination/reduce, filter out the duplicates
- var merge =  myArr.reduce(function(a,b){
-        return a.concat(b);
-  });
-  var reverseCount = -1;
-  console.log(merge.slice(-1) == merge[0]);
+// function uniteUnique(arr) {
+//   var myArr = [];
+//   var count = 0;
+//   var end = "";
+//   while(end === ""){//look thur all arrays and combine them to one array
+//     if(arguments[count] !== undefined){
+//         myArr.push(arguments[count]);
+//         count++;
+//     }else{
+//             end = undefined;
+//          }
+//   }  //during combination/reduce, filter out the duplicates
+//  var merge =  myArr.reduce(function(a,b){
+//         return a.concat(b);
+//   });
+//   var reverseCount = -1;
+//   console.log(merge.slice(-1) == merge[0]);
   // if(merge.slice(-1) == merge[0]){
   //   myArr.pop(merge.slice(-1));
   // }
   //   reverseCount - 1;
   //console.log(reverseCount -= 1);
-
-
-
-
 
   // for(var i = 0; i < myArr.length; i ++){
   //   if(){
@@ -53,7 +49,19 @@ function uniteUnique(arr) {
   //       return a.concat(b);
   // });
 
+//}
+
+
+function uniteUnique(arr) {
+  var args = Array.prototype.slice.call(arguments);
+  console.log(args);
+
+
+
+
 }
+
+
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
