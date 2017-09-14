@@ -57,18 +57,30 @@ function uniteUnique(arr) {
     return a.concat(b);
   });
   var uniqueArgs = [];
-  console.log(args.slice(-1));
-  console.log(args.length);
+  //console.log(args[0] == args.slice(-1));
+  console.log(args[args.length -3]); // get last value in an array arry[arry.length -1]
 
-    for(var i = 0; i < args.length; i++){
-        console.log(args.indexOf());
-    }
+ //return args[0] == args.slice(-1) ? args.pop(-1) : "not same number. " + args;
+   if(args[0] == args.slice(-4)){
+     args.pop(-1);
+   }else{
+     console.log("not same number.");
+   }
 
+  // for(var i = 0; i < args.length; i++){
+  //   for(var j = -1; j > -args.length; j--){
+  //         if(args[i] == args.slice(j)){
+  //           args.pop(j);
+  //         }else{
+  //           console.log("not same number.");
+  //         }
+  //   }
+  // }
 
-
- console.log(uniqueArgs);
+  console.log(args);
 
 }
+
 
 
 
