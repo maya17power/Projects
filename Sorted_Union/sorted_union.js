@@ -53,16 +53,15 @@ Array.prototype.reduce()
 
 
 function uniteUnique(arr) {
-  var args = Array.prototype.slice.call(arguments);
+  var args = Array.prototype.slice.call(arguments).reduce(function(a,b){
+    return a.concat(b);
+  });
   var uniqueArgs = [];
-  console.log(args);
-
+  console.log(args.slice(-1));
+  console.log(args.length);
 
     for(var i = 0; i < args.length; i++){
-        for(var j = 0; j < args[i].length; j++){
-          console.log(uniqueArgs[j]);
-
-        }
+        console.log(args.indexOf());
     }
 
 
