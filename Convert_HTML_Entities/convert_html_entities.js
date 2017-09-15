@@ -13,19 +13,18 @@ String.prototype.replace()
 */
 
 function convertHTML(str) {
-  var enti = [34,38,39,60,62,];
+  var enti = [34,39,60,62,];
   var format = "&"+val+";";
   var val = "";
-  console.log(str[6].charCodeAt());
-  console.log(String.fromCharCode(38));
+  console.log(String.fromCharCode(enti[0]));
 
- return  str.filter(function(val){
-    return val;
-  });
+  console.log(format);
 
-  //console.log(format);
-  // &colon;&rpar;
-  //return str;
+  //var strFilter = str.replace(,);
+
+  for(var i = 0; i < str.length; i++){
+    console.log(str[i]);
+  }
 }
 
 convertHTML("Dolce & Gabbana");
