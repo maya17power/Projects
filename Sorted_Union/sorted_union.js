@@ -56,29 +56,11 @@ function uniteUnique(arr) {
   var args = Array.prototype.slice.call(arguments).reduce(function(a,b){
     return a.concat(b);
   });
-  var uniqueArgs = [];
-  //console.log(args[0] == args.slice(-1));
-  console.log(args[args.length -3]); // get last value in an array arry[arry.length -1]
+  var uArray = args.filter(function(item, pos) {//removed duplicates in an array
+    return args.indexOf(item) == pos;
+  });
 
- //return args[0] == args.slice(-1) ? args.pop(-1) : "not same number. " + args;
-   if(args[0] == args.slice(-4)){
-     args.pop(-1);
-   }else{
-     console.log("not same number.");
-   }
-
-  // for(var i = 0; i < args.length; i++){
-  //   for(var j = -1; j > -args.length; j--){
-  //         if(args[i] == args.slice(j)){
-  //           args.pop(j);
-  //         }else{
-  //           console.log("not same number.");
-  //         }
-  //   }
-  // }
-
-  console.log(args);
-
+  return uArray;
 }
 
 
