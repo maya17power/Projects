@@ -13,18 +13,18 @@ String.prototype.replace()
 */
 
 function convertHTML(str) {
-  var enti = [34,39,60,62,];
-  var format = "&"+val+";";
-  var val = "";
-  console.log(String.fromCharCode(enti[0]));
-
-  console.log(format);
-
-  //var strFilter = str.replace(,);
-
+  var enti = [['"'," &amp; "],["'"," &apos; "],[">","&gt;"],["<","&lt;"],["&","&amp;"]];
+  //var e = str.split('');
+  var match;
   for(var i = 0; i < str.length; i++){
-    console.log(str[i]);
+      for(var j = 0; j < enti.length; j++){
+          if(str[i] === enti[j][0]){
+            match = str.replace(str[i],enti[j]);
+
+          }
+      }
   }
+  return match;
 }
 
 convertHTML("Dolce & Gabbana");
