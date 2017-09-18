@@ -13,14 +13,15 @@ String.prototype.replace()
 */
 
 function convertHTML(str) {
-  var enti = [['"'," &amp; "],["'"," &apos; "],[">","&gt;"],["<","&lt;"],["&","&amp;"]];
+  var myStr = str.split('');
+  var enti = [['"',"&amp; "],["'","&apos; "],[">","&gt;"],["<","&lt;"],["&","&amp;"]];
   //var e = str.split('');
   var match;
   for(var i = 0; i < str.length; i++){
       for(var j = 0; j < enti.length; j++){
           if(str[i] === enti[j][0]){
-            match = str.replace(str[i],enti[j]);
-
+            console.log(str[i]);
+            match = str.replace(str[i],enti[j][1]);
           }
       }
   }
