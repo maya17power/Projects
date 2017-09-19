@@ -13,19 +13,17 @@ String.prototype.replace()
 */
 
 function convertHTML(str) {
-  var myStr = str.split('');
-  var enti = [['"',"&amp; "],["'","&apos; "],[">","&gt;"],["<","&lt;"],["&","&amp;"]];
-  //var e = str.split('');
-  var match;
-  for(var i = 0; i < str.length; i++){
-      for(var j = 0; j < enti.length; j++){
-          if(str[i] === enti[j][0]){
-            console.log(str[i]);
-            match = str.replace(str[i],enti[j][1]);
-          }
-      }
-  }
-  return match;
+  var html = {//build object with value pairs
+  '\"':"&amp;",
+  "\'":"&apos;",
+  ">":"&gt;",
+  "<":"&lt;",
+  "&":"&amp;"
+  };
+
+  return str.split('').map(function(entity){//split the string and map(iterate thru values)
+   return html[entity] || entity;//return entity inside html variable OR just return entity.
+  }).join('');//join string back together.
 }
 
 convertHTML("Dolce & Gabbana");
