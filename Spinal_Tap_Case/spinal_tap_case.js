@@ -15,8 +15,10 @@ function spinalCase(str) {
   // "It's such a fine line between stupid, and clever."
   // --David St. Hubbins
   var filter = /[_\s]/g;//find any underscore and spaces on entire string "g".
-  var myString = str.replace(filter,"-").toLowerCase();
-  return myString;
+  var filter2 = /\s+|_+/g;//find all spaces \s+ and all underscores \_+
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  return str.replace(filter2,'-').toLowerCase();
+
 }
 
 spinalCase('This Is Spinal Tap');
