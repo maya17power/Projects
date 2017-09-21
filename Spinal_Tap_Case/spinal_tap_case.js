@@ -18,7 +18,6 @@ function spinalCase(str) {
   var filter2 = /\s+|_+/g;//find all spaces \s+ and all underscores \_+
   str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
   return str.replace(filter2,'-').toLowerCase();
-
 }
 
 spinalCase('This Is Spinal Tap');
