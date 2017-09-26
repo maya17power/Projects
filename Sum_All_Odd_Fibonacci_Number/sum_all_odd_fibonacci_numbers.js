@@ -20,7 +20,7 @@ var b= 0;
 var temp;
 var fc = [];
 var myNum = num;
-
+var mySum;
   while(num >= 0){
     temp = a;
     a = a+b;
@@ -29,10 +29,11 @@ var myNum = num;
     fc.push(temp);
   }
 
-  return fc.filter(function(val){
-    return val % 2;
+ return fc.filter(function(val){
+    if(val <= myNum && val % 2){
+     return val;
+    }
   });
-
 }
 
 sumFibs(4);
