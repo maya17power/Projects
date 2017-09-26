@@ -15,10 +15,24 @@ Remainder
 
 
 function sumFibs(num) {
-  var myNum = 10;
-  for(var i = 0; i <= myNum; i++){
-    console.log(i*i);
+var a= 1;
+var b= 0;
+var temp;
+var fc = [];
+var myNum = num;
+
+  while(num >= 0){
+    temp = a;
+    a = a+b;
+    b = temp;
+    num--;
+    fc.push(temp);
   }
+
+  return fc.filter(function(val){
+    return val % 2;
+  });
+
 }
 
 sumFibs(4);
