@@ -16,7 +16,12 @@ Array.prototype.push()
 */
 
 function sumPrimes(num) {
-  return num;
+  var p = [];
+  for(var i = 0; i <= num; i++){
+    if((i) !== 1 && (i % 2) !==  0 && (i % 3) !== 0){
+      console.log(i);
+    }
+  }
 }
 
 sumPrimes(10);
