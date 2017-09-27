@@ -13,16 +13,22 @@ Here are some helpful links:
 
 For Loops
 Array.prototype.push()
+(i % Number) !== 0
+
+
+
 */
 
 function sumPrimes(num) {
   var p = [];
   for(var i = 0; i <= num; i++){
-    if((i) !== 1 && (i % 2) !==  0 && (i % 3) !== 0){
+    if((i) !== 1 && (i % 2) !==  0 && (i % 3) !== 0 && (i % 5) !== 0 && (i % 7) !== 0){
       console.log(i);
     }
   }
 }
+
+sumPrimes(61);
 
 sumPrimes(10);
 
