@@ -21,10 +21,10 @@ Array.prototype.push()
 
 function sumPrimes(num) {
   var p = [];
-  for(var i = 0; i <= num; i++){
-    if((i) !== 1 && (i % 2) !==  0 && (i % 3) !== 0 && (i % 5) !== 0 && (i % 7) !== 0){
-      console.log(i);
-    }
+  var sqrt = Math.floor(Math.sqrt(num));
+  console.log(sqrt);
+  for(var i = 2; i <= num; i++){
+      //console.log(i);
   }
 }
 
