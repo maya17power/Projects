@@ -19,16 +19,24 @@ Array.prototype.push()
 
 */
 
-function sumPrimes(num) {
-  var p = [];
-  var sqrt = Math.floor(Math.sqrt(num));
-  console.log(sqrt);
-  for(var i = 2; i <= num; i++){
-      //console.log(i);
+function sumPrimes(max) {
+  var sieve = [];
+  var i;
+  var j;
+  var primes = [];
+  for (i = 2; i <= max; ++i) {
+    if (!sieve[i]) {
+      // i has not been marked -- it is prime
+      primes.push(i);
+      for (j = i << 1; j <= max; j += i) {
+        sieve[j] = true;
+      }
+    }
   }
+  return primes.reduce(function(previous, current){
+    return previous + current;
+  },0);
 }
-
-sumPrimes(61);
 
 sumPrimes(10);
 
