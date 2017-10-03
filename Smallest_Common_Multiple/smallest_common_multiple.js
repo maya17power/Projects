@@ -15,23 +15,23 @@ Smallest Common Multiple
 */
 
 function smallestCommons(arr) {
-  for(var i = 1; i <= 60; i++){
-        if(i % 5 === 0){
-      console.log(i);
+  var quot = 0;
+  var loop = 1;
+  var n;
+  var myArr = [];
+
+    arr.sort(function(a,b){
+      return b-a;
+    });
+
+    for(var i = arr[0]; i >= arr[1]; i--){
+      myArr.push(i);
     }
-        if(i % 4 === 0){
-      console.log(i);
-    }
-        if(i % 3 === 0){
-      console.log(i);
-    }
-        if(i % 2 === 0){
-      console.log(i);
-    }
-        if(i % 1 === 0){
-      console.log(i);
-    }
-  }
+
+    do{
+      quot = myArr[0] * loop * myArr[1];
+    }while();
+
 }
 
 
