@@ -15,22 +15,38 @@ Smallest Common Multiple
 */
 
 function smallestCommons(arr) {
-  var quot = 0;
-  var loop = 1;
-  var n;
-  var myArr = [];
+var min;
+var max;
+  arr.sort(function(a,b){
+     return b-a;
+  });
 
-    arr.sort(function(a,b){
-      return b-a;
-    });
+ max = arr[0];
+ min = arr[1];
 
-    for(var i = arr[0]; i >= arr[1]; i--){
-      myArr.push(i);
+
+ function range(min, max) {
+    var arr = [];
+      for (var i = min; i <= max; i++) {
+           arr.push(i);
+        }
+        return arr;
     }
 
-    do{
-      quot = myArr[0] * loop * myArr[1];
-    }while();
+    function gcd(a, b) {
+        return !b ? a : gcd(b, a % b);
+    }
+
+    function lcm(a, b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    var multiple = min;
+    range(min, max).forEach(function(n) {
+        multiple = lcm(multiple, n);
+    });
+
+    return multiple;
 
 }
 
