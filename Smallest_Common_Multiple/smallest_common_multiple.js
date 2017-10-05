@@ -15,22 +15,18 @@ Smallest Common Multiple
 */
 
 function smallestCommons(arr) {
-var min;
-var max;
   arr.sort(function(a,b){
      return b-a;
   });
 
- max = arr[0];
- min = arr[1];
-
+var  max = arr[0], min = arr[1];
 
  function range(min, max) {
     var arr = [];
       for (var i = min; i <= max; i++) {
-           arr.push(i);
+           arr.push(i);//push the range of numbers to new local variable array
         }
-        return arr;
+        return arr;//return the new created number range array
     }
 
     function gcd(a, b) {
