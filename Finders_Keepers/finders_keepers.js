@@ -11,8 +11,8 @@ Array.prototype.filter()
 */
 
 function findElement(arr, func) {
-  var num = arr.filter(function(val){return func(val);})[0];
-  return num;
+  //var num = arr.filter(function(val){return func(val);})[0];//my version
+  return arr.filter(func)[0];//reduced version
 }
 
 findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
