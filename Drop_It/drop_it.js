@@ -19,10 +19,10 @@ Array.prototype.slice()
 
 function dropElements(arr, func) {
   // Drop them elements.
-  var myArr = arr.filter(func)[0];
-  console.log("slice at: " + myArr);
-  console.log(arr.slice(myArr));
-
+  var fp = arr.filter(func)[0];
+  console.log(arr.indexOf(fp));
+  return arr.indexOf(fp) === -1 ? undefined : arr.slice(arr.indexOf(fp)) ;
+  //return arr.slice(arr.indexOf(fp));
 }
 
 //dropElements([1, 2, 3], function(n) {return n < 3; });
