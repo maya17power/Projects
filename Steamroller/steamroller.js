@@ -12,8 +12,13 @@ Array.isArray()
 
 function steamrollArray(arr) {
   // I'm a steamroller, baby
-  
-  return arr;
+  var myArr = [];
+  arr.forEach(function(val){
+   myArr.push(Array.isArray(arr));
+   //console.log("is array " + Array.isArray(val));
+
+  });
+  return myArr;
 }
 
 steamrollArray([1, [2], [3, [[4]]]]);
