@@ -13,11 +13,12 @@ Array.isArray()
 function steamrollArray(arr) {
   // I'm a steamroller, baby
   var myArr = [];
-  arr.forEach(function(val){
-   myArr.push(Array.isArray(arr));
-   //console.log("is array " + Array.isArray(val));
-
-  });
+  var i = 0;
+  var current = 0;
+  var myFilter = /[0-9]/g;
+  console.log(arr[1].slice(-1));
+  console.log(Array.isArray(arr[1]));
+  myArr.push(arr[0]);
   return myArr;
 }
 
