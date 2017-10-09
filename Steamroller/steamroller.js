@@ -16,9 +16,14 @@ function steamrollArray(arr) {
   var i = 0;
   var current = 0;
   var myFilter = /[0-9]/g;
-  console.log(arr[1].slice(-1));
-  console.log(Array.isArray(arr[1]));
-  myArr.push(arr[0]);
+  console.log(arr[3]);
+  console.log(Array.isArray(arr[3]));
+  //myArr.push(arr[0]);
+
+  myArr = arr.map(function(task, index, array){
+    return task[1];
+  });
+
   return myArr;
 }
 
