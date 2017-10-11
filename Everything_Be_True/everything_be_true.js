@@ -10,7 +10,11 @@ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write you
 
 function truthCheck(collection, pre) {
   // Is everyone being true?
-  return pre;
+  console.log(pre);
+  collection.map(function(item, index, array){
+    console.log(item.sex);
+  });
+  //return pre;
 }
 
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
