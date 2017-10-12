@@ -12,10 +12,13 @@ Object.entries(obj)
 
 function truthCheck(collection, pre) {
   // Is everyone being true?
-  console.log(pre);
-  collection.map(function(item, index, array){
-    console.log(item.sex);
+ return collection.filter(function(val, idx, array){
+    Object.keys(val).forEach(function(val,idx,array){
+      console.log(val);
+    });
+
   });
+
   //return pre;
 }
 
