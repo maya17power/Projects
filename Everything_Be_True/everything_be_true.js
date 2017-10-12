@@ -6,6 +6,8 @@ Remember, you can access object properties through either dot notation or [] not
 
 Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
 
+Object.entries(obj)
+//The Object.entries() method returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
 */
 
 function truthCheck(collection, pre) {
