@@ -18,15 +18,16 @@ function truthCheck(collection, pre) {
   // Is everyone being true?
   var found = [];
   console.log(collection.length);
-  var myArray = collection.map(function(val, idx, array){
-      return Object.keys(val).filter(function(val,idx,array){
+  var myArray = collection.map(function(value,idx,array){
+      Object.keys(value).filter(function(val,idx,array){
         if(val === pre){
-          found.push(pre);
+          console.log(pre);
         }
-      },[]);
+      });
+      //console.log(Object.values(value));
     });
-  console.log(found);
-  return found.length === collection.length ? true: false;
+  console.log(myArray);
+  //return found.length === collection.length ? true: false;
 }
 
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
