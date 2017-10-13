@@ -17,17 +17,12 @@ Object.values(obj)
 function truthCheck(collection, pre) {
   // Is everyone being true?
   var found = [];
-  console.log(collection.length);
-  var myArray = collection.map(function(value,idx,array){
-      Object.keys(value).filter(function(val,idx,array){
-        if(val === pre){
-          console.log(pre);
-        }
-      });
-      //console.log(Object.values(value));
-    });
-  console.log(myArray);
-  //return found.length === collection.length ? true: false;
+ return collection.reduce(function(b,a){
+  var ifound = a[pre];
+  console.log(ifound);
+  //console.log(a.filter(Boolean));
+  },[]);
+  //console.log(found);
 }
 
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
