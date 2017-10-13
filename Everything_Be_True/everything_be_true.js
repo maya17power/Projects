@@ -16,13 +16,9 @@ Object.values(obj)
 
 function truthCheck(collection, pre) {
   // Is everyone being true?
-  var found = [];
- return collection.reduce(function(b,a){
-  var ifound = a[pre];
-  console.log(ifound);
-  //console.log(a.filter(Boolean));
-  },[]);
-  //console.log(found);
+  return collection.reduce(function(b,a){
+    return b.concat(a[pre]).filter(Boolean);
+  },[]).length === collection.length;
 }
 
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
