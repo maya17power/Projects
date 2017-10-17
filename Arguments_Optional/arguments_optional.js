@@ -23,10 +23,11 @@ Arguments object
 
 function addTogether() {
   var arg1 = arguments[0];
-  var arg2 = arguments[0];
+  var arg2 = arguments[1];
   return function(){
     return arg1 + arg2;
-  };
+  }();
+
 }
 
 addTogether(2,3);
