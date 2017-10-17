@@ -22,12 +22,12 @@ Arguments object
 */
 
 function addTogether() {
-  var arg1 = arguments[0];
-  var arg2 = arguments[1];
+  var arg = arguments;
   return function(){
-    return arg1 + arg2;
+    for(var i = 0; i < arg.length; i++){
+      console.log(typeof(arg[i]));
+    }
   }();
-
 }
 
 addTogether(2,3);
