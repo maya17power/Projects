@@ -21,10 +21,13 @@ Arguments object
 
 */
 
-f
 function addTogether() {
-var checkNumber = function(num){
-  return typeof((num) !== 'num')? undefined : num;
+var checkNumber = function(val){
+  if(typeof(val) !== 'num'){
+    return undefined;
+  }else{
+    return val;
+  }
 };
 
 if(arguments.length > 1){
