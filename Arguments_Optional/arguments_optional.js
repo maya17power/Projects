@@ -21,6 +21,7 @@ Arguments object
 
 */
 
+f
 function addTogether() {
 var checkNumber = function(num){
   return typeof((num) !== 'num')? undefined : num;
@@ -39,7 +40,9 @@ if(arguments.length > 1){
   if(checkNumber(c)){
     return function(arg2){
       if(c === undefined || checkNumber(arg2) === undefined){
-
+         return undefined;
+      }else{
+        return c + arg2;
       }
     };
   }
