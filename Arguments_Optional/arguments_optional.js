@@ -22,12 +22,30 @@ Arguments object
 */
 
 function addTogether() {
-  var arg = arguments;
-  return function(){
-    for(var i = 0; i < arg.length; i++){
-      console.log(typeof(arg[i]));
-    }
-  }();
+var checkNumber = function(num){
+  return typeof((num) !== 'num')? undefined : num;
+};
+
+if(arguments.length > 1){
+  var a = checkNumber(arguments[0]);
+  var b = checkNumber(arguments[1]);
+  if(a === undefined || b === undefined){
+    return undefined;
+  }else{
+    return a+b;
+  }
+}else{
+  var c = arguments[0];
+  if(checkNumber(c)){
+    return function(arg2){
+      if(c === undefined || checkNumber(arg2) === undefined){
+
+      }
+    };
+  }
+}
+
+
 }
 
 addTogether(2,3);
