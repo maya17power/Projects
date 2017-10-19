@@ -21,37 +21,28 @@ Arguments object
 
 */
 
-function addTogether() {//create a variable function to return number value or anything else as undefined.
-var checkNumber = function(val){
-  if(typeof val !== 'number'){
-    return undefined;
-  }else{
-    return val;
-  }
-};
-
-if(arguments.length > 1){//calculate for perameters greater then 1.
-  var a = checkNumber(arguments[0]);//manually confirm value 0 is a number
-  var b = checkNumber(arguments[1]);//manually confirm value 1 is a number
-  if(a === undefined || b === undefined){//if both values are not numbers, return undefined. Otherwise add them together.
-    return undefined;
-  }else{
-    return a+b;
-  }
-}else{//or else, if there is only one value;
-  var c = arguments[0];//manually save the one value to variable
-  if(checkNumber(c)){//check to see if the value is a number
-    return function(arg2){//if it is a number return a function with arg2 perameter.
-      if(c === undefined || checkNumber(arg2) === undefined){//check to see if single value variable and if perameter arg2 is not a number then return undefined. Otherwise add them together.
-         return undefined;
+function addTogether() {
+var ckNum = function(val){return typeof(val) !== "number"?undefined:val};
+    if(arguments.length > 1){
+      var a = ckNum(arguments[0]);
+      var b = ckNum(arguments[1]);
+      if(a === undefined || b === undefined){
+        return undefined;
       }else{
-        return c + arg2;
+        return a + b;
       }
-    };
-  }
-}
-
-
+    }else{
+      var c = arguments[0];
+      if(ckNum(c)){
+        return function(arg2){
+          if(c === undefined || ckNum(arg2) === undefined){
+            return undefined;
+          }else{
+            return c + arg2;
+          }
+        };
+      }
+    }
 }
 
 addTogether(2,3);
