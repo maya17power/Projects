@@ -22,8 +22,13 @@ RegExp
 
 
 function telephoneCheck(str) {
+  var nfilter = /(^[0-9]$)/;// find numbers filter?
+  var ofilter = /^()/g;
   // Good luck!
-  return true;
+  return str.split().filter(function(item,idx,array){
+    return parseInt(item);
+  });
+
 }
 
 
