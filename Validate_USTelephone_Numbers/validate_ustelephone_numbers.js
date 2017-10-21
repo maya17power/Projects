@@ -37,41 +37,46 @@ RegExp /\d+/g;
 
 function telephoneCheck(str) {
   var nfilter = /\d+/g;// find numbers filter?
-  var ofilter = /^()/g;
   // Good luck!
-  return str.split('').filter(nfilter);
+  var checkNum = str.split('').filter(function(item,idx,array){//first check to for numbers and if there are 10 digits.
+    return item.match(nfilter);
+  });
+  if(checkNum.length === 10){
 
+  }else if(checkNum.length === 11){
+
+  }
 }
 
 
 
-telephoneCheck("555-555-5555");
+//telephoneCheck("555-555-5555");
 
 
-// telephoneCheck("555-555-5555") should return a boolean.
-// telephoneCheck("1 555-555-5555") should return true.
-// telephoneCheck("1 (555) 555-5555") should return true.
-// telephoneCheck("5555555555") should return true.
-// telephoneCheck("555-555-5555") should return true.
-// telephoneCheck("(555)555-5555") should return true.
-// telephoneCheck("1(555)555-5555") should return true.
-// telephoneCheck("555-5555") should return false.
-// telephoneCheck("5555555") should return false.
-// telephoneCheck("1 555)555-5555") should return false.
-// telephoneCheck("1 555 555 5555") should return true.
-// telephoneCheck("1 456 789 4444") should return true.
-// telephoneCheck("123**&!!asdf#") should return false.
-// telephoneCheck("55555555") should return false.
-// telephoneCheck("(6505552368)") should return false
-// telephoneCheck("2 (757) 622-7382") should return false.
-// telephoneCheck("0 (757) 622-7382") should return false.
-// telephoneCheck("-1 (757) 622-7382") should return false
-// telephoneCheck("2 757 622-7382") should return false.
-// telephoneCheck("10 (757) 622-7382") should return false.
-// telephoneCheck("27576227382") should return false.
-// telephoneCheck("(275)76227382") should return false.
-// telephoneCheck("2(757)6227382") should return false.
-// telephoneCheck("2(757)622-7382") should return false.
-// telephoneCheck("555)-555-5555") should return false.
-// telephoneCheck("(555-555-5555") should return false.
-// telephoneCheck("(555)5(55?)-5555")
+// telephoneCheck("555-555-5555");// should return a boolean.
+ //telephoneCheck("1 555-555-5555");// should return true.
+// telephoneCheck("1 (555) 555-5555");// should return true.
+// telephoneCheck("5555555555");// should return true.
+// telephoneCheck("555-555-5555");// should return true.
+// telephoneCheck("(555)555-5555");// should return true.
+// telephoneCheck("1(555)555-5555");// should return true.
+// telephoneCheck("555-5555");// should return false.
+// telephoneCheck("5555555");// should return false.
+// telephoneCheck("1 555)555-5555");// should return false.
+// telephoneCheck("1 555 555 5555");// should return true.
+// telephoneCheck("1 456 789 4444");// should return true.
+// telephoneCheck("123**&!!asdf#");// should return false.
+// telephoneCheck("55555555");// should return false.
+// telephoneCheck("(6505552368)");// should return false
+// telephoneCheck("2 (757) 622-7382");// should return false.
+// telephoneCheck("0 (757) 622-7382");// should return false.
+// telephoneCheck("-1 (757) 622-7382");// should return false
+// telephoneCheck("2 757 622-7382");// should return false.
+// telephoneCheck("10 (757) 622-7382");// should return false.
+// telephoneCheck("27576227382");// should return false.
+// telephoneCheck("(275)76227382");// should return false.
+// telephoneCheck("2(757)6227382");// should return false.
+// telephoneCheck("2(757)622-7382");// should return false.
+// telephoneCheck("555)-555-5555");// should return false.
+// telephoneCheck("(555-555-5555");// should return false.
+// telephoneCheck("(555)5(55?)-5555");//
