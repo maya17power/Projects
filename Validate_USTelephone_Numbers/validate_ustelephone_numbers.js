@@ -16,18 +16,30 @@ Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write you
 
 Here are some helpful links:
 
-RegExp
+We can use special selectors in Regular Expressions to select a particular type of value.
+
+One such selector is the digit selector \d which is used to retrieve one digit (e.g. numbers 0 to 9) in a string.
+
+In JavaScript, it is used like this: /\d/g.
+
+Appending a plus sign (+) after the selector, e.g. /\d+/g, allows this regular expression to match one or more digits.
+
+The trailing g is short for 'global', which allows this regular expression to find all matches rather than stop at the first match.
+
+Instructions
+Use the \d selector to select the number of numbers in the string, allowing for the possibility of one or more digit.
+
+RegExp /\d+/g;
+.match()
 
 */
 
 
 function telephoneCheck(str) {
-  var nfilter = /(^[0-9]$)/;// find numbers filter?
+  var nfilter = /\d+/g;// find numbers filter?
   var ofilter = /^()/g;
   // Good luck!
-  return str.split().filter(function(item,idx,array){
-    return parseInt(item);
-  });
+  return str.split('').filter(nfilter);
 
 }
 
