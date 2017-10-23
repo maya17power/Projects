@@ -41,15 +41,23 @@ function telephoneCheck(str) {
   var checkNum = str.split('').filter(function(item,idx,array){//first check to for numbers and if there are 10 digits.
     return item.match(nfilter);
   });
+
   if(checkNum.length > 10){
     console.log("10 digits present");
     if(checkNum[0] === "1"){
-      console.log("First number is a one");
+      console.log("First number is a 1");
+      return true;
     }else{
       console.log("First number is not a 1");
+      return false;
     }
   }else{
-    console.log("10 or less digits present");
+    if(checkNum.length == 10){
+    console.log("10 digits present");
+      return true;
+    }else{
+      return false;
+    }
   }
 }
 
