@@ -35,30 +35,16 @@ RegExp /\d+/g;
 */
 
 
-function telephoneCheck(str) {
+ffunction telephoneCheck(str) {
+  var s = str.split(' ');
+  //"(" is at 1
+  //")" is at 5
   var nfilter = /\d+/g;// find numbers filter?
   // Good luck!
-  var checkNum = str.split('').filter(function(item,idx,array){//first check to for numbers and if there are 10 digits.
-    return item.match(nfilter);
+  return s.reduce(function(b,a){
+    return b.concat(a);
   });
 
-  if(checkNum.length > 10){
-    console.log("10 digits present");
-    if(checkNum[0] === "1"){
-      console.log("First number is a 1");
-      return true;
-    }else{
-      console.log("First number is not a 1");
-      return false;
-    }
-  }else{
-    if(checkNum.length == 10){
-    console.log("10 digits present");
-      return true;
-    }else{
-      return false;
-    }
-  }
 }
 
 
