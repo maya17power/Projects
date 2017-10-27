@@ -35,14 +35,14 @@ RegExp /\d+/g;
 */
 
 
-ffunction telephoneCheck(str) {
-  var s = str.split(' ');
+function telephoneCheck(str) {
+  var s = str.split('');
   //"(" is at 1
   //")" is at 5
   var nfilter = /\d+/g;// find numbers filter?
   // Good luck!
-  return s.reduce(function(b,a){
-    return b.concat(a);
+  return s.map(function(item,idx,array){
+    return item === "(" || item === ")";
   });
 
 }
