@@ -32,49 +32,49 @@ Use the \d selector to select the number of numbers in the string, allowing for 
 RegExp /\d+/g;
 .match()
 
+Relevant Links
+
+RegExp353
+regexpal.com697
+regex101.com/534
+
+^ denotes the beginning of the string (1\s?)? checks allows for a “1” or a "1 " at the beginning.
+\d{n} checks for exactly n number of digits so (\(\d{3}\)|\d{3}) checks for three digits that are allowed to be between parenthesis.
+[\s\-]? checks for spaces or dashes between the groups of digits.
+$ denotes the end of the string. In this case the beginning and end of the string are used in the regex to prevent it from matching any longer string that might contain a valid phone number (eg. “s 555 555 5555 a”).
+Lastly we use regex.test(str) to test if the string adheres to the regular expression and return true or false.
+
+
+regexObj.test(str) //true if there is a match between the regular expression and the specified string; otherwise, false.
+
+
 */
 
 
 function telephoneCheck(str) {
-  var DID = str.split(' ').reduce(function(b,a){
-    return b.concat(a);
-  });
-  var numbers = [];
-  var paren = [];
-  DID.split('').map(function(item,idx,array){
-    if(item.charCodeAt() >= 48 && item.charCodeAt() <= 57){
-      numbers.push(item);
-    }else if(item.charCodeAt() >= 40 && item.charCodeAt() <=41){
-      paren.push(item);
-    }
-  });
-  if(numbers.length >= 10 && paren.length == 2){
-    return true;
-  }else{
-    return false;
-  }
+   var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+   return regex.test(str);
 }
-
 
 
 //telephoneCheck("555-555-5555");
 
 
-// telephoneCheck("555-555-5555");// should return a boolean.
- //telephoneCheck("1 555-555-5555");// should return true.
+//telephoneCheck("555-555-5555");// should return a boolean.
+//telephoneCheck("1 555-555-5555");// should return true.
 // telephoneCheck("1 (555) 555-5555");// should return true.
 // telephoneCheck("5555555555");// should return true.
 // telephoneCheck("555-555-5555");// should return true.
 // telephoneCheck("(555)555-5555");// should return true.
 // telephoneCheck("1(555)555-5555");// should return true.
-// telephoneCheck("555-5555");// should return false.
-// telephoneCheck("5555555");// should return false.
-// telephoneCheck("1 555)555-5555");// should return false.
+//telephoneCheck("555-5555");// should return false.
+//telephoneCheck("5555555");// should return false.
+//telephoneCheck("1 555)555-5555");// should return false.
 // telephoneCheck("1 555 555 5555");// should return true.
 // telephoneCheck("1 456 789 4444");// should return true.
 // telephoneCheck("123**&!!asdf#");// should return false.
 // telephoneCheck("55555555");// should return false.
-// telephoneCheck("(6505552368)");// should return false
+ telephoneCheck("(6505552368)");// should return false
 // telephoneCheck("2 (757) 622-7382");// should return false.
 // telephoneCheck("0 (757) 622-7382");// should return false.
 // telephoneCheck("-1 (757) 622-7382");// should return false
