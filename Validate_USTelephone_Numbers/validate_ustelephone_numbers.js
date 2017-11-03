@@ -36,15 +36,23 @@ RegExp /\d+/g;
 
 
 function telephoneCheck(str) {
-  var s = str.split('');
-  //"(" is at 1
-  //")" is at 5
-  var nfilter = /\d+/g;// find numbers filter?
-  // Good luck!
-  return s.map(function(item,idx,array){
-    return item === "(" || item === ")";
+  var DID = str.split(' ').reduce(function(b,a){
+    return b.concat(a);
   });
-
+  var numbers = [];
+  var paren = [];
+  DID.split('').map(function(item,idx,array){
+    if(item.charCodeAt() >= 48 && item.charCodeAt() <= 57){
+      numbers.push(item);
+    }else if(item.charCodeAt() >= 40 && item.charCodeAt() <=41){
+      paren.push(item);
+    }
+  });
+  if(numbers.length >= 10 && paren.length == 2){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 
