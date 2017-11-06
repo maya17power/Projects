@@ -17,9 +17,21 @@ There are several rules for handling incomplete data:
 
 If prop is "tracks" but the album doesn't have a "tracks" property, create an empty array before adding the new value to the album's corresponding property.
 
+if(prop != "tracks" && key != tracks){
+
+}
+
 If prop is "tracks" and value isn't empty (""), push the value onto the end of the album's existing tracks array.
 
+if(prop === "tracks" && value != ""){
+
+}
+
 If value is empty (""), delete the given prop property from the album.
+
+if(val == ""){
+
+}
 
 Hints
 Use bracket notation when accessing object properties with variables.
