@@ -6,6 +6,11 @@ Write a function which takes an album's id (like 2548), a property prop (like "a
 
 If prop isn't "tracks" and value isn't empty (""), update or set the value for that record album's property.
 
+if(Object.keys(collectionCopy[id]).map(function(item){return item !== "tracks";})){
+
+}
+
+
 Your function must always return the entire collection object.
 
 There are several rules for handling incomplete data:
@@ -49,6 +54,7 @@ var collection = {
       "tracks": [ ]
     },
     "5439": {
+      "artist": "ABBA",
       "album": "ABBA Gold"
     }
 };
@@ -57,9 +63,9 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
 function updateRecords(id, prop, value) {
+console.log("these are keys: "+ Object.keys(collectionCopy[id]));
+console.log("these are values: "+ Object.values(collectionCopy[id]));
 
-
-  return collection;
 }
 
 // Alter values below to test your code
