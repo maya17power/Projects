@@ -78,7 +78,15 @@ function updateRecords(id, prop, value) {
 console.log("these are keys: "+ Object.keys(collectionCopy[id]));
 console.log("these are values: "+ Object.values(collectionCopy[id]));
 
-return prop == Object.keys(collectionCopy[id]);
+// var match = function(val){
+  for(var i = 0; i < Object.keys(collectionCopy[id]); i++){
+    console.log(Object.keys(collectionCopy[id])[i]);
+  }
+// };
+
+// match(prop);
+
+
 
   // if(match(prop)){
 
