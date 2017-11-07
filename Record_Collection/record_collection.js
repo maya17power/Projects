@@ -66,7 +66,7 @@ var collection = {
       "tracks": [ ]
     },
     "5439": {
-      "artist": "ABBA",
+     /* "artist":"ABBA",*/
       "album": "ABBA Gold"
     }
 };
@@ -77,6 +77,12 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 function updateRecords(id, prop, value) {
 console.log("these are keys: "+ Object.keys(collectionCopy[id]));
 console.log("these are values: "+ Object.values(collectionCopy[id]));
+
+return prop == Object.keys(collectionCopy[id]);
+
+  // if(match(prop)){
+
+  // }
 
 }
 
