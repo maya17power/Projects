@@ -13,7 +13,29 @@ Symmetric Difference
 */
 
 function sym(args) {
-var arrayCollection = arguments.reduce(function(a,b){return a.concat(b);},0);
+  var arg = [];
+  for(var i = 0; i < arguments.length; i++){
+    arg.push(arguments[i]);
+  }
+
+  function symDiff(arrayOne, arrayTwo){
+    var result = [];
+    arrayOne.forEach(function(item){
+      if(arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0){
+        result.push(item);
+      }
+    });
+
+    arrayTwo.forEach(function(item){
+      if(arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0){
+        result.push(item);
+      }
+    });
+
+    return result;
+  }
+
+  return arg.reduce(symDiff);
 }
 
 sym([1, 2, 3], [5, 2, 1, 4]);
